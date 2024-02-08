@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\mapChangelvl1.cs" />
     <Compile Include="Assets\Scripts\GruntScript.cs" />
     <Compile Include="Assets\Scripts\JohnMovements.cs" />
     <Compile Include="Assets\Scripts\moneyCollected.cs" />
