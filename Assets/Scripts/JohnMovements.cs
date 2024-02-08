@@ -49,12 +49,12 @@ public class JohnMovements : MonoBehaviour
             Grounded = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.W) && Grounded) 
+        if( (Input.GetKeyDown(KeyCode.W) && Grounded)) 
         {
             Jump();
         }
         
-        if (Input.GetKey(KeyCode.Q) && Time.time > LastShoot + 0.15f)
+        if (Input.GetKey(KeyCode.Space) && Time.time > LastShoot + 0.15f)
         {
             Shoot();
             LastShoot = Time.time;
