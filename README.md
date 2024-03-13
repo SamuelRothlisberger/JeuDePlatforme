@@ -23,23 +23,15 @@ git clone https://github.com/votreutilisateur/jeu-de-plateforme.git
 ## Dépendances
 
 Ce projet dépend des éléments suivants :
-- Unity [version]
+- Unity [2022.3.18f1]
 - [Autres dépendances, le cas échéant]
 
 ## Suivi du Projet
 
-Le développement du projet est suivi sur [IceScrum](lien_vers_le_projet_sur_icescrum). Vous pouvez consulter l'avancement du projet ainsi que les tâches en cours.
+Le développement du projet est suivi sur [IceScrum](https://cloud.icescrum.com/p/JEU/#/project). Vous pouvez consulter l'avancement du projet ainsi que les tâches en cours.
 
 ## Contributeurs
 
-- [Nom1] ([@pseudo1](lien_vers_profil_github))
-- [Nom2] ([@pseudo2](lien_vers_profil_github))
-- [Nom3] ([@pseudo3](lien_vers_profil_github))
-
-## Licence
-
-Ce projet est sous licence [indiquez la licence utilisée, par exemple MIT, GPL, etc.]. Veuillez consulter le fichier `LICENSE` pour plus d'informations.
-
-## Remerciements
-
-Nous tenons à remercier [nom des enseignants ou des personnes qui ont contribué au projet] pour leur soutien et leurs conseils tout au long du développement.
+- [Messer] ([@santimesser](https://github.com/santimesser))
+- [Husic] ([@amerhusic](https://github.com/amerhusic))
+- [Röthlisberger] ([@SamuelRothlisberger](https://github.com/SamuelRothlisberger))
