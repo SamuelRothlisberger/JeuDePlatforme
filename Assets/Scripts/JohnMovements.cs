@@ -7,6 +7,7 @@ public class JohnMovements : MonoBehaviour
     public GameObject BulletPrefad;
     private Rigidbody2D Rigidbody2D;
     private float Horizontal;
+    private float Vertical;
     public float JumpForce;
     public float Speed;
     private bool Grounded;
@@ -26,6 +27,7 @@ public class JohnMovements : MonoBehaviour
     void Update()
     {
         Horizontal = Input.GetAxis("Horizontal");
+        Vertical = Input.GetAxis("Vertical");
 
         if (Horizontal < 0.0f)
         {
@@ -49,12 +51,12 @@ public class JohnMovements : MonoBehaviour
             Grounded = false;
         }
 
-        if( (Input.GetKeyDown(KeyCode.W) && Grounded)) 
+        if( (Input.GetKeyDown(KeyCode.Space) && Grounded)) 
         {
             Jump();
         }
         
-        if (Input.GetKey(KeyCode.Space) && Time.time > LastShoot + 0.15f)
+        if (Input.GetKey(KeyCode.Mouse0) && Time.time > LastShoot + 0.15f)
         {
             Shoot();
             LastShoot = Time.time;
@@ -65,10 +67,50 @@ public class JohnMovements : MonoBehaviour
     private void Shoot()
     {
         Vector3 direction;
-        if (transform.localScale.x == 1.0f) direction = Vector3.right;
-        else direction = Vector3.left;
-        GameObject bullet = Instantiate(BulletPrefad, transform.position + direction * 0.1f, Quaternion.identity);
-        bullet.GetComponent<BulletScript>().SetDirection(direction);
+
+        if (Mathf.Approximately(Mathf.Abs(Vertical), 1.0f) && Mathf.Approximately(Mathf.Abs(Horizontal), 0.0f))
+        {
+            if (Vertical > 0)
+            {
+                direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * 45), Mathf.Sin(Mathf.Deg2Rad * 45), 0);
+            }
+            else if (Vertical < 0)
+            {
+                direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * 225), Mathf.Sin(Mathf.Deg2Rad * 225), 0);
+            }
+            else
+            {
+                direction = Vector3.zero;
+            }
+        }
+        else if (Mathf.Approximately(Mathf.Abs(Horizontal), 1.0f) && Mathf.Approximately(Mathf.Abs(Vertical), 0.0f))
+        {
+            if (Horizontal > 0)
+            {
+                direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * 0), Mathf.Sin(Mathf.Deg2Rad * 0), 0);
+            }
+            else if (Horizontal < 0)
+            {
+                direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * 180), Mathf.Sin(Mathf.Deg2Rad * 180), 0);
+            }
+            else
+            {
+                direction = Vector3.zero;
+            }
+        }
+        else if (Mathf.Abs(Vertical) + Mathf.Abs(Horizontal) == 2)
+        {
+            float angle = Mathf.Atan2(Vertical, Horizontal) * Mathf.Rad2Deg;
+            direction = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
+        }
+        else
+        {
+            direction = Vector3.zero;
+        }
+
+            GameObject bullet = Instantiate(BulletPrefad, transform.position + direction * 0.1f, Quaternion.identity);
+            bullet.GetComponent<BulletScript>().SetDirection(direction);
+        
     }
 
     private void Jump()
