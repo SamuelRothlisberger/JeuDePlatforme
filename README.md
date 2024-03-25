@@ -18,15 +18,15 @@ git clone https://github.com/SamuelRothlisberger/JeuDePlateforme.git
 
 - Déplacements : gauche-droite / sauts
 - Attaques : Tire dans plusieurs directions
-- Score : Récole d'argents éparpillé sur les différents niveaux
-- Chagement de niveau : Téléportation vers le prochain niveau
+- Score : Récolte d'argents éparpillés sur les différents niveaux
+- Changement de niveau : Téléportation vers le prochain niveau
 
 ## Dépendances
 
 Ce projet dépend des éléments suivants :
-- Unity [2022.3.18f1]
-- Unity Asset Store [2D Pixel Art Platformer | Biome - Armerican Forest](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
-- Youtube [Tutorial COMPLETO Unity 2D desde Cero](https://www.youtube.com/watch?v=GbmRt0wydQU)
+- Unity - [2022.3.18f1]
+- Unity Asset Store - [2D Pixel Art Platformer | Biome - Armerican Forest](https://assetstore.unity.com/packages/2d/environments/2d-pixel-art-platformer-biome-american-forest-255694)
+- Youtube - [Tutorial COMPLETO Unity 2D desde Cero](https://www.youtube.com/watch?v=GbmRt0wydQU)
 
 ## Suivi du Projet
 
